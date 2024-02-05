@@ -1,0 +1,3 @@
+{"level":"debug","source":"server","source":"PHP","time":"2023-12-30T22:19:35+02:00","message":"Reloading PHP versions"}
+{"level":"debug","source":"server","source":"PHP","time":"2023-12-30T22:19:36+02:00","message":"Using PHP version 8.2.14 (from Platform.sh: /mnt/f/fromz/guestbook/.platform.app.yaml)"}
+{"level":"info","source":"server","source":"PHP","php":"8.2.14","path":"/usr/sbin/php-fpm8.2","port":39611,"time":"2023-12-30T22:19:36+02:00","message":"listening"}

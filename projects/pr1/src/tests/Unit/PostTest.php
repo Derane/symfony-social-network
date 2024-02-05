@@ -1,0 +1,21 @@
+<?php
+
+namespace Tests\Unit;
+
+use App\Models\User;
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+class PostTest extends TestCase
+{
+    use RefreshDatabase;
+
+    public function testShowPosts()
+    {
+        $users = User::factory()
+            ->count(5)
+            ->hasPosts(2)
+            ->create();
+        $this->assertDatabaseCount('users', 5);
+    }
+}

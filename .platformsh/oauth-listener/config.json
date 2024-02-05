@@ -1,0 +1,1 @@
+{"body":"<img\n  src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAQMAAABKLAcXAAAABlBMVEUAAADg4ODy8Xj7AAAAAXRSTlMAQObYZgAAAB5JREFUOMtj+I8EPozyRnlU4w1NMJhCcDT+hm2MAQAJBMb6YxK/8wAAAABJRU5ErkJggg==\"\n  alt=\"\"\n  width=\"100\"\n  height=\"100\"\n  class=\"icon\">\n\n<h1>{{title}}</h1>\n\n{{content}}\n"}

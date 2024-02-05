@@ -1,0 +1,8 @@
+# Auto-refresh the SSH certificate:
+Match host "*.platform.sh" exec "symfony ssh-cert:load --refresh-only --yes --quiet 2>/dev/null"
+
+# Include the certificate and its key:
+CertificateFile /home/valera/.platformsh/.session/sess-cli-default/ssh/id_ed25519-cert.pub
+IdentityFile /home/valera/.platformsh/.session/sess-cli-default/ssh/id_ed25519
+
+Host *.platform.sh
