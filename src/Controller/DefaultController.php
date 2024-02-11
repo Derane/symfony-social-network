@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     #[Route('/', name: 'default-controller')]
-    public function index() : JsonResponse
+    public function index(): JsonResponse
     {
         return $this->json([
             'hello' => 'world'
