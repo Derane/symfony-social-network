@@ -37,7 +37,7 @@ class UserProfile
 
     #[ORM\OneToOne(inversedBy: 'userProfile', cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
-    private ?User $relatedUser = null;
+    private ?User $user = null;
 
     public function getId(): ?int
     {
@@ -128,14 +128,14 @@ class UserProfile
         return $this;
     }
 
-    public function getRelatedUser(): ?User
+    public function getUser(): ?User
     {
-        return $this->relatedUser;
+        return $this->user;
     }
 
-    public function setRelatedUser(User $relatedUser): static
+    public function setUser(User $user): static
     {
-        $this->relatedUser = $relatedUser;
+        $this->user = $user;
 
         return $this;
     }
