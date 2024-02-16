@@ -10,28 +10,23 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20240207191452 extends AbstractMigration
+final class Version20240213112547 extends AbstractMigration
 {
     public function getDescription(): string
     {
-        return 'Create the micro_post table';
+        return '';
     }
 
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE micro_post (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    text VARCHAR(500) NOT NULL,
-    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-);
-');
+        $this->addSql('ALTER TABLE comment ADD created TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP TABLE micro_post');
+        $this->addSql('CREATE SCHEMA public');
+        $this->addSql('ALTER TABLE comment DROP created');
     }
 }
