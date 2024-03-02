@@ -22,15 +22,14 @@ class UserProfileType extends AbstractType
             ->add('twitterUsername')
             ->add('company')
             ->add('location')
-            ->add('dateOfBirth', DateType::class,[
+            ->add('dateOfBirth', DateType::class, [
                 'widget' => 'single_text',
                 'required' => false
             ])
             ->add('user', EntityType::class, [
                 'class' => User::class,
-'choice_label' => 'id',
-            ])
-        ;
+                'choice_label' => 'id',
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

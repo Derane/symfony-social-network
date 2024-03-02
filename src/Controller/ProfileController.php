@@ -16,6 +16,7 @@ class ProfileController extends AbstractController
             'user' => $user
         ]);
     }
+
     #[Route('/profile/{id}/follows', name: 'app_profile_follows')]
     public function follows(User $user): Response
     {

@@ -24,6 +24,7 @@ class LikeController extends AbstractController
         $entityManager->flush();
         return $this->redirect($request->headers->get('referer'));
     }
+
     #[Route('/unlike/{id}', name: 'app_unlike')]
     #[IsGranted('IS_AUTHENTICATED_FULLY')]
     public function unlike(MicroPost $post, EntityManagerInterface $entityManager, Request $request): Response

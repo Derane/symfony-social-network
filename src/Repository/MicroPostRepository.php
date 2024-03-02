@@ -51,8 +51,9 @@ class MicroPostRepository extends ServiceEntityRepository
     }
 
     public function findAllByAuthor(
-        int | User $author
-    ): array {
+        int|User $author
+    ): array
+    {
         return $this->findAllQuery(
             withComments: true,
             withLikes: true,
@@ -68,7 +69,8 @@ class MicroPostRepository extends ServiceEntityRepository
 
     public function findAllByAuthors(
         Collection|array $authors
-    ): array {
+    ): array
+    {
         return $this->findAllQuery(
             withComments: true,
             withLikes: true,
@@ -109,7 +111,8 @@ class MicroPostRepository extends ServiceEntityRepository
         bool $withLikes = false,
         bool $withAuthors = false,
         bool $withProfiles = false,
-    ): QueryBuilder {
+    ): QueryBuilder
+    {
         $query = $this->createQueryBuilder('p');
 
         if ($withComments) {

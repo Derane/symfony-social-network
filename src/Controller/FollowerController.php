@@ -22,6 +22,7 @@ class FollowerController extends AbstractController
         }
         return $this->redirect($request->headers->get('referer'));
     }
+
     #[Route('/unfollow/{id}', name: 'app_unfollow')]
     public function unfollow(User $user, ManagerRegistry $managerRegistry, Request $request): Response
     {

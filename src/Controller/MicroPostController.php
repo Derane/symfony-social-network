@@ -28,7 +28,7 @@ class MicroPostController extends AbstractController
         );
     }
 
-    #[Route('/micro-post/top-liked', name: 'app_micro_post_topliked')]
+    #[Route('/micro-post/top-liked', name: 'app_micro_post_top-liked')]
     public function topLiked(MicroPostRepository $posts): Response
     {
         return $this->render(
@@ -75,9 +75,10 @@ class MicroPostController extends AbstractController
     )]
     #[IsGranted('ROLE_WRITER')]
     public function add(
-        Request $request,
+        Request             $request,
         MicroPostRepository $posts
-    ): Response {
+    ): Response
+    {
         $form = $this->createForm(
             MicroPostType::class,
             new MicroPost()
@@ -110,10 +111,11 @@ class MicroPostController extends AbstractController
     #[Route('/micro-post/{post}/edit', name: 'app_micro_post_edit')]
     #[IsGranted(MicroPost::EDIT, 'post')]
     public function edit(
-        MicroPost $post,
-        Request $request,
+        MicroPost           $post,
+        Request             $request,
         MicroPostRepository $posts
-    ): Response {
+    ): Response
+    {
         $form = $this->createForm(
             MicroPostType::class,
             $post
@@ -146,10 +148,11 @@ class MicroPostController extends AbstractController
     #[Route('/micro-post/{post}/comment', name: 'app_micro_post_comment')]
     #[IsGranted('ROLE_COMMENTER')]
     public function addComment(
-        MicroPost $post,
-        Request $request,
+        MicroPost         $post,
+        Request           $request,
         CommentRepository $comments
-    ): Response {
+    ): Response
+    {
         $form = $this->createForm(
             CommentType::class,
             new Comment()
